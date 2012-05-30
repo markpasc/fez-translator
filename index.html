@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <title>fez language key</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+
+    <style type="text/css">
+        p { margin: 0; clear: left; }
+        img, span {
+            display: inline-block;
+            float: left;
+            width: 75px;
+            height: 75px;
+            margin: 10px;
+            background-color: #eee;
+            text-align: bottom;
+            cursor: pointer;
+        }
+        .r img {
+            -webkit-transform: rotate(90deg);
+        }
+        .rr img {
+            -webkit-transform: rotate(180deg);
+        }
+        .rrr img {
+            -webkit-transform: rotate(270deg);
+        }
+        textarea {
+            margin: 10px;
+            width: 540px;
+            height: 6em;
+            font-size: 1.5em;
+        }
+    </style>
+
+</head><body>
+
+    <div id="container">
+
+    <div id="bg" title=" ">
+    <p class="clearfix">
+        <img src="1-1.png" title="p">
+        <img src="2-1.png" title="a">
+        <img src="3-1.png" title="e">
+        <img src="4-1.png" title="b">
+        <img src="5-1.png" title="u">
+        <img src="6-1.png" title="l">
+        <span title="
+">↵</span>
+    </p>
+
+    <p class="r clearfix">
+        <img src="1-1.png" title="j">
+        <img src="2-1.png" title="g">
+        <img src="3-1.png" title="x">
+        <img src="4-1.png" title="t">
+        <img src="5-1.png" title="o">
+        <img src="6-1.png" title="f">
+        <span title="
+">↵</span>
+    </p>
+
+    <p class="rr clearfix">
+        <img src="1-1.png" title="d">
+        <img src="2-1.png" title="m">
+        <img src="3-1.png" title="z">
+        <img src="4-1.png" title="n">
+        <img src="5-1.png" title="i">
+        <img src="6-1.png" title="y">
+        <span title="
+">↵</span>
+    </p>
+
+    <p class="rrr clearfix">
+        <img src="1-1.png" title="w">
+        <img src="2-1.png" title="s">
+        <img src="3-1.png" title="k">
+        <img src="4-1.png" title="h">
+        <img src="5-1.png" title="c">
+        <img src="6-1.png" title="r">
+        <span title="
+">↵</span>
+    </p>
+    </div>
+
+    <textarea></textarea>
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('img').add('span').add('#bg').click(function () {
+                var $area = $('textarea');
+                var newText = $area.val() + $(this).attr('title');
+                $area.val(newText);
+                $area.focus();
+                $area.get(0).setSelectionRange(newText.length, newText.length);
+                return false;
+            });
+        });
+    </script>
+
+    </div>
+
+</body></html>
